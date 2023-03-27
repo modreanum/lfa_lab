@@ -1,7 +1,7 @@
-f = open("tastatura1.txt", "r")
+f = open("tastatura.txt", "r")
 inp=input("input=")
-#stinit=input("stare initiala=")
-#stinit=int(stinit[1:])
+stinit=input("stare initiala=")
+stinit=int(stinit[1:])
 lenght=len(inp)
 linie1=f.readline()
 L=[]
@@ -19,8 +19,8 @@ for x in range(0,len(fin)):
 #print(fin)
 drum=[]
 ok=1
-#p1=stinit
-p1=0
+p1=stinit
+#p1=0
 drum.append(p1)
 y=0
 ok=1
