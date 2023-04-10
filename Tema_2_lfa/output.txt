@@ -1,0 +1,12 @@
+stare initiala q01
+stari finale:
+q5
+
+q01 1 q23
+q01 0 q01
+q23 0 q5
+q23 1 q4
+q4 0 q4
+q4 1 q4
+q5 1 q4
+q5 0 q5

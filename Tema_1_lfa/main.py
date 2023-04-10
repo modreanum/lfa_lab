@@ -1,4 +1,4 @@
-f = open("tastatura.txt", "r")
+f = open("tastatura2.txt", "r")
 inp=input("input=")
 stinit=input("stare initiala=")
 stinit=int(stinit[1:])
