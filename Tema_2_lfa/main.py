@@ -21,8 +21,8 @@ maxim = 0
 for l in L:
     if l[0] > maxim:
         maxim = l[0]
-    if l[0] > maxim:
-        maxim = l[0]
+    if l[2] > maxim:
+        maxim = l[2]
 
 alfabet = []
 for x in L:
@@ -56,7 +56,6 @@ for inp in liste:
         p1 =nod
         drum.append(p1)
         y = 0
-        ok = 1
         while y < len(inp) and ok:
             ok = 0
             for x in L:
