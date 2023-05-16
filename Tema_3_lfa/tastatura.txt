@@ -1,0 +1,6 @@
+4
+S -> aA|bB|λ
+A -> aS
+B -> bC
+C -> bD
+D -> bB|λ
