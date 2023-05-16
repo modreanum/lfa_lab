@@ -1,5 +1,8 @@
+import sys
+sys.setrecursionlimit(10 ** 6)
+
 grammar = {}
-with open('tastatura2.txt', 'r') as file:
+with open('tastatura.txt', 'r') as file:
     lungime = int(file.readline())
     #print(lungime)
     for line in file:
@@ -36,18 +39,20 @@ for keys, values in grammar.items():
 cuvant = []
 noduri = ['S']
 
-
+cuvinte=[]
 def cuv(indice):
-    if indice==lungime:
+
+    if len(noduri)-1==lungime:
         nod2=noduri[len(noduri)-1]
         for n in L:
             if n[0]==nod2 and n[1]=='λ':
                 result=cuvant
                 result=''.join(cuvant)
-                print(result)
+                cuvinte.append(result)
                 if cuvant:
                     cuvant.pop()
                     noduri.pop()
+
                 return 0
         if cuvant:
             cuvant.pop()
@@ -55,23 +60,32 @@ def cuv(indice):
         return 0
     else:
         for n in L:
-            if n[0] == noduri[indice]:
+            if n[0] == noduri[len(noduri)-1]:
                 if len(n)==3:
+
                     cuvant.append(n[1])
                     noduri.append(n[2])
+
                     cuv(indice+1)
                 else:
-                    if n[1]!='λ' and indice+1==lungime:
+                    if n[1]!='λ' and len(noduri)==lungime:
                         cuvant.append(n[1])
                         result = cuvant
                         result = ''.join(cuvant)
-                        print(result)
+                        cuvinte.append(result)
+                        cuvant.pop()
+                        noduri.pop()
                         cuvant.pop()
                         return 0
         if cuvant:
             cuvant.pop()
             noduri.pop()
         return 0
-
-
-cuv(0)
+    if cuvant:
+        cuvant.pop()
+        noduri.pop()
+    return 0
+cuv(1)
+cuvinte=set(cuvinte)
+for cuvant in cuvinte:
+    print(cuvant)

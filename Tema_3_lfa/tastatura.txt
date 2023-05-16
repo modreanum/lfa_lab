@@ -1,6 +1,7 @@
-4
-S -> aA|bB|λ
-A -> aS
-B -> bC
-C -> bD
-D -> bB|λ
+10
+S->aA|dE
+A->aB|aS
+B->bC
+C->bD|bB
+D->cD|e|λ
+E->d
